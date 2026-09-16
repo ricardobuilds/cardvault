@@ -8,7 +8,8 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql
     ports:
-      - "5432:5432"
+      # Expose PostgreSQL to Rails running locally on macOS.
+      - "${POSTGRES_PORT}:5432"
 
 volumes:
   postgres_data:
