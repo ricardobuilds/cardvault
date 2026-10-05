@@ -36,11 +36,9 @@ CardVault currently uses the following project-controlled versions:
 - **Ruby 3.4.10** — specified by `.ruby-version`
 - **Bundler 2.6.9** — specified by `Gemfile.lock`
 - **Rails 8.1.3.1** — resolved and locked by `Gemfile.lock`
-- **PostgreSQL 18** — specified by `compose.yaml`
+- **PostgreSQL 18.6** — specified by `compose.yaml`
 
 Other Ruby gem versions are resolved and locked by `Gemfile.lock`.
-
-> PostgreSQL is currently pinned to major version 18. An exact PostgreSQL 18.x version will be pinned separately after testing.
 
 ### Development Environment Tested With
 
@@ -238,7 +236,7 @@ Start the PostgreSQL service:
 docker compose up -d
 ```
 
-CardVault currently uses the `postgres:18` image. Docker Compose creates and starts the PostgreSQL container, configures its networking and port mapping, and attaches the persistent `postgres_data` volume.
+CardVault currently uses the `postgres:18.6` image. Docker Compose creates and starts the PostgreSQL container, configures its networking and port mapping, and attaches the persistent `postgres_data` volume.
 
 Verify the service is running:
 
@@ -289,7 +287,7 @@ Docker host-port mapping
    │
    │ → container port 5432
    ▼
-PostgreSQL 18
+PostgreSQL 18.6
 ```
 
 CardVault is currently configured as an API-only Rails application.
@@ -559,7 +557,7 @@ macOS
         Docker port mapping
                 │
                 ▼
-        PostgreSQL 18 container
+        PostgreSQL 18.6 container
                 │
                 ▼
         postgres_data volume
