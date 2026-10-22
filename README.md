@@ -1,24 +1,57 @@
-# README
+# CardVault
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+CardVault is a personal collection-management application for tracking and organizing English-language One Piece Trading Card Game (TCG) cards.
 
-Things you may want to cover:
+The goal is to make it easier to keep track of which cards I own, distinguish between collectible versions of the same card, and manage quantities without repeatedly entering the same information.
 
-* Ruby version
+## Project Status
 
-* System dependencies
+**Current status:** Phase 0 — Development Environment completed.
 
-* Configuration
+The development environment is configured. Requirements and application design are the next steps; collection-management functionality has not yet been implemented.
 
-* Database creation
+## Planned MVP Features
 
-* Database initialization
+The first useful version of CardVault will focus on:
 
-* How to run the test suite
+- **Card search:** Find recorded cards by name or card number.
+- **Collectible versions:** Distinguish versions of the same card, such as alternate artwork, promotional printings, and reprints.
+- **Manual card entry:** Record card information and quantities when a collectible version is not already in the collection.
+- **Quantity management:** Increase the quantity owned of an existing collectible version without duplicating its card information.
+- **Collection browsing:** View recorded cards, their collectible versions, and quantities owned.
 
-* Services (job queues, cache servers, search engines, etc.)
+The initial version will focus on a personal English-language collection. Additional functionality will be considered as the project evolves.
 
-* Deployment instructions
+## Current Technology Stack
 
-* ...
+CardVault currently uses the following technologies:
+
+- **Backend:** Ruby on Rails (API-only)
+- **Database:** PostgreSQL
+- **Local development:** Docker and Docker Compose
+- **Testing:** Rails' built-in testing framework
+
+Rails runs directly on macOS during local development, while PostgreSQL runs in a Docker container.
+
+Specific dependency versions are maintained in the project's configuration and lockfiles. Technologies and versions may evolve as the application's requirements change.
+
+## Getting Started
+
+See the [Development Setup Guide](docs/SETUP.md) for installation, configuration, and local development instructions.
+
+## Documentation
+
+- [Project Proposal](docs/PROJECT_PROPOSAL.md) — Project motivation, initial requirements, scope, and technology decisions.
+- [Development Setup Guide](docs/SETUP.md) — Local environment setup and development commands.
+
+## AI-Assisted Development
+
+CardVault is developed with the assistance of AI tools for technical research, planning, design discussions, documentation, and implementation support.
+
+Architectural decisions, requirements, and generated code are reviewed and evaluated before being incorporated into the project.
+
+## Future Development
+
+Potential future enhancements include external card-data integration, card scanning, collection statistics, pricing information, and additional user-facing clients.
+
+These are possibilities rather than requirements for the initial version.
