@@ -6,9 +6,9 @@ The goal is to make it easier to keep track of which cards I own, distinguish be
 
 ## Project Status
 
-**Current status:** Pre-Phase 1 — Repository & Planning (in progress).
+**Current status:** Phase 1 — Requirements & Use Case Design.
 
-The project foundation and development environment are complete. The README and development roadmap have been established, and repository planning is being finalized before beginning requirements analysis.
+The project foundation, development environment, and repository planning are complete. The next stage focuses on defining and approving the MVP requirements, use cases, and acceptance criteria before detailed database and API design.
 
 Collection-management functionality has not yet been implemented.
 

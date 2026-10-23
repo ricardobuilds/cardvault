@@ -35,8 +35,8 @@ Iteration scope and sequencing will depend on requirements and technical depende
 | Phase | Focus | Status |
 |---|---|---|
 | Phase 0 | Project Foundation & Development Environment | Completed |
-| Pre-Phase 1 | Repository & Planning | In progress |
-| Phase 1 | Requirements & Use Case Design | Not started |
+| Pre-Phase 1 | Repository & Planning | Completed |
+| Phase 1 | Requirements & Use Case Design | In progress |
 | Phase 2 | Domain Modeling & Database Design | Not started |
 | Phase 3 | API Design & Implementation | Not started |
 | Phase 4 | Testing, Refinement & Documentation | Not started |
@@ -78,7 +78,7 @@ Establish the project's direction, select the initial technology stack, configur
 
 ## Pre-Phase 1 — Repository & Planning
 
-**Status:** In progress
+**Status:** Completed
 
 *Guiding question: How will we organize and plan the development of CardVault?*
 
@@ -86,7 +86,7 @@ Establish the project's direction, select the initial technology stack, configur
 
 Organize the repository, communicate the project's purpose and current state, and establish the development roadmap before detailed requirements analysis.
 
-### Planned Activities
+### Completed Activities
 
 - Update the root `README.md` with a project overview, preliminary MVP scope, technology stack, and documentation links.
 - Define development phases, objectives, activities, and completion criteria.
@@ -97,14 +97,14 @@ Organize the repository, communicate the project's purpose and current state, an
 
 - [x] Root `README.md` updated and merged into `main`.
 - [x] Development phases and sequence agreed upon.
-- [ ] `docs/ROADMAP.md` completed, reviewed, and committed.
-- [ ] GitHub repository information and documentation links reviewed.
+- [x] `docs/ROADMAP.md` completed, reviewed, and committed.
+- [x] GitHub repository information and documentation links reviewed.
 
 ---
 
 ## Phase 1 — Requirements & Use Case Design
 
-**Status:** Not started
+**Status:** In progress
 
 *Guiding question: What must CardVault do?*
 
