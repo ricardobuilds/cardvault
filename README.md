@@ -6,13 +6,15 @@ The goal is to make it easier to keep track of which cards I own, distinguish be
 
 ## Project Status
 
-**Current status:** Phase 0 — Development Environment completed.
+**Current status:** Pre-Phase 1 — Repository & Planning (in progress).
 
-The development environment is configured. Requirements and application design are the next steps; collection-management functionality has not yet been implemented.
+The project foundation and development environment are complete. The README and development roadmap have been established, and repository planning is being finalized before beginning requirements analysis.
 
-## Planned MVP Features
+Collection-management functionality has not yet been implemented.
 
-The first useful version of CardVault will focus on:
+## Preliminary MVP Features
+
+The following capabilities are being considered for the initial MVP and will be evaluated during requirements analysis:
 
 - **Card search:** Find recorded cards by name or card number.
 - **Collectible versions:** Distinguish versions of the same card, such as alternate artwork, promotional printings, and reprints.
@@ -43,6 +45,7 @@ See the [Development Setup Guide](docs/SETUP.md) for installation, configuration
 
 - [Project Proposal](docs/PROJECT_PROPOSAL.md) — Project motivation, initial requirements, scope, and technology decisions.
 - [Development Setup Guide](docs/SETUP.md) — Local environment setup and development commands.
+- [Development Roadmap](docs/ROADMAP.md) — Development phases, guiding questions, planned activities, and completion criteria.
 
 ## AI-Assisted Development
 
