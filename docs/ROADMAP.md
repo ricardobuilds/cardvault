@@ -36,7 +36,7 @@ Iteration scope and sequencing will depend on requirements and technical depende
 |---|---|---|
 | Phase 0 | Project Foundation & Development Environment | Completed |
 | Pre-Phase 1 | Repository & Planning | Completed |
-| Phase 1 | Requirements & Use Case Design | In progress |
+| Phase 1 | Requirements & Use Case Design | Completed |
 | Phase 2 | Domain Modeling & Database Design | Not started |
 | Phase 3 | API Design & Implementation | Not started |
 | Phase 4 | Testing, Refinement & Documentation | Not started |
@@ -88,10 +88,10 @@ Organize the repository, communicate the project's purpose and current state, an
 
 ### Completed Activities
 
-- Update the root `README.md` with a project overview, preliminary MVP scope, technology stack, and documentation links.
-- Define development phases, objectives, activities, and completion criteria.
-- Document the development plan in `docs/ROADMAP.md`.
-- Review the GitHub repository description and documentation links for accuracy.
+- Updated the root `README.md` with a project overview, preliminary MVP scope, technology stack, and documentation links.
+- Defined development phases, objectives, activities, and completion criteria.
+- Documented the development plan in `docs/ROADMAP.md`.
+- Reviewed the GitHub repository description and documentation links for accuracy.
 
 ### Completion Criteria
 
@@ -104,7 +104,7 @@ Organize the repository, communicate the project's purpose and current state, an
 
 ## Phase 1 — Requirements & Use Case Design
 
-**Status:** In progress
+**Status:** Completed
 
 *Guiding question: What must CardVault do?*
 
@@ -112,26 +112,29 @@ Organize the repository, communicate the project's purpose and current state, an
 
 Define and approve the MVP's functional requirements, expected behavior, and operational expectations before detailed database and API design.
 
-### Planned Activities
+### Completed Activities
 
-- Review and refine the preliminary requirements in `docs/PROJECT_PROPOSAL.md`.
-- Identify application actors and their interactions with the system.
-- Evaluate proposed collection-management workflows, including card identification, collection recording, ownership management, and collection navigation.
-- Define use cases and document their preconditions, main flows, alternative flows, and exceptions.
-- Establish acceptance criteria for the expected behavior of each approved workflow.
-- Identify relevant edge cases, invalid inputs, and ambiguous data scenarios.
-- Confirm the MVP scope and identify capabilities to defer.
-- Determine whether a user-facing client is necessary for the MVP.
-- Establish runtime, deployment, and operational expectations.
+- Reviewed and refined the preliminary requirements in `docs/PROJECT_PROPOSAL.md`.
+- Identified application actors and their interactions with the system.
+- Evaluated collection-management workflows, including card identification, collection recording, ownership management, and collection navigation.
+- Defined use cases and documented their preconditions, main flows, alternative flows, and exceptions.
+- Established acceptance criteria for the expected behavior of each approved workflow.
+- Identified relevant edge cases, invalid inputs, and ambiguous data scenarios.
+- Confirmed the MVP scope and identified capabilities to defer.
+- Determined that a local API accessed through Postman is sufficient for the MVP, without a graphical user interface.
+- Established runtime, deployment, and operational expectations.
+- Documented the finalized requirements and use cases in `docs/USE_CASES.md`.
+- Aligned `docs/PROJECT_PROPOSAL.md` with the approved MVP scope while preserving the project's original motivation and technical rationale.
 
 ### Completion Criteria
 
-- [ ] `docs/USE_CASES.md` created and reviewed.
-- [ ] MVP use cases and acceptance criteria documented.
-- [ ] Important edge cases and error scenarios addressed.
-- [ ] MVP scope and user-facing client requirements confirmed.
-- [ ] Runtime and operational expectations established.
-- [ ] Requirements approved before detailed design begins.
+- [x] `docs/USE_CASES.md` created and reviewed.
+- [x] MVP use cases and acceptance criteria documented.
+- [x] Important edge cases and error scenarios addressed.
+- [x] MVP scope and user-facing client requirements confirmed.
+- [x] Runtime and operational expectations established.
+- [x] Project proposal aligned with the approved MVP requirements.
+- [x] Requirements approved before detailed design begins.
 
 ---
 
@@ -183,6 +186,7 @@ Design, implement, and incrementally test the backend API required to support th
 - Review the approved requirements, use cases, and domain model.
 - Identify API resources and operations needed to support the required functionality.
 - Define API contracts, including endpoints, HTTP methods, request and response formats, and error handling.
+- Document the API contract in `docs/openapi.yaml` using the OpenAPI specification.
 - Organize implementation into manageable iterations based on dependencies and complexity.
 - Implement approved API functionality with appropriate validation and consistent error handling.
 - Develop automated tests alongside each implementation iteration.
@@ -193,6 +197,7 @@ Design, implement, and incrementally test the backend API required to support th
 ### Completion Criteria
 
 - [ ] API contracts documented and reviewed.
+- [ ] `docs/openapi.yaml` describes the implemented MVP API.
 - [ ] Approved MVP backend functionality implemented.
 - [ ] Request validation and error handling behave consistently.
 - [ ] Automated tests cover implemented functionality and important edge cases.
@@ -221,7 +226,9 @@ Verify the technical quality of the integrated MVP implementation, resolve outst
 - Evaluate relevant database queries and application performance.
 - Refactor code where improvements are justified.
 - Verify runtime configuration and operational behavior against agreed expectations.
-- Document implemented API endpoints and update relevant technical documentation.
+- Review and finalize the OpenAPI specification against the implemented API.
+- Create a Postman collection for manually exercising the approved MVP endpoints.
+- Update `README.md` and relevant technical documentation to reflect the implemented application.
 
 ### Completion Criteria
 
@@ -229,6 +236,9 @@ Verify the technical quality of the integrated MVP implementation, resolve outst
 - [ ] Integration and reliability requirements verified.
 - [ ] Known MVP-blocking technical defects resolved.
 - [ ] API and development documentation reflect the implemented system.
+- [ ] OpenAPI specification reviewed against the implemented API.
+- [ ] Postman collection available for manually testing MVP workflows.
+- [ ] `README.md` reflects the implemented MVP and its usage instructions.
 - [ ] Runtime and operational expectations verified.
 - [ ] Technical verification completed against agreed acceptance criteria.
 
