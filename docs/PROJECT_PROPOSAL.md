@@ -2,6 +2,8 @@
 
 > **CardVault is a personal collection-management application for tracking and organizing my English-language One Piece Trading Card Game collection.**
 
+This proposal describes CardVault's motivation, initial vision, scope, and technical direction. The approved MVP requirements, including detailed business rules, API behavior, and acceptance criteria, are documented separately in [USE_CASES.md](USE_CASES.md).
+
 ## 1. Project Background and Motivation
 
 While attending One Piece Fest in Los Angeles, I participated in a learn-to-play One Piece TCG session. I enjoyed the experience and soon began collecting One Piece cards myself. As my collection grew, I quickly found that keeping track of the cards I owned was more difficult than I expected.
@@ -24,13 +26,17 @@ For CardVault to be useful for managing my collection, I need to be able to reco
 
 When adding a card, I should first be able to determine whether the same collectible version has already been recorded in CardVault.
 
-If the same collectible version already exists, CardVault should show the information for that card and how many copies I currently own. I should then be able to increase the quantity without entering all of the card information again.
+If the same collectible version already exists, CardVault should show the information for that card and how many copies I currently own. I should then be able to increase its quantity without entering all of the card information again.
 
 If that collectible version has not already been recorded, I should be able to enter the information needed to identify and describe it and record the quantity I own.
 
-I should also be able to view my collection and see the cards, collectible versions, and quantities I have recorded.
+I should also be able to view and search my collection, retrieve individual records, and see the cards, collectible versions, and quantities I have recorded.
 
-This defines the minimum workflow that would make CardVault genuinely useful to me. Additional capabilities can be added after this workflow is working.
+As my collection changes, I should be able to increase or decrease the quantity of an existing collectible record and remove records that I no longer need.
+
+These capabilities define the minimum workflow that would make CardVault genuinely useful to me. Additional capabilities can be added after this workflow is working.
+
+The approved MVP functionality and its expected behavior are specified in `USE_CASES.md`.
 
 ## 4. Initial Card Information
 
@@ -58,22 +64,28 @@ CardVault should record the applicable official information for each card. Depen
 - Power
 - Counter
 - Life
-- Effects
-- Trigger Effect
 
-Not every field applies to every card category. For example, Leader and Character cards contain different combinations of information, while Event and Stage cards have their own applicable fields.
+Not every field applies to every card category. For example, Leader and Character cards contain different combinations of information, while Event and Stage cards have their own applicable fields. DON!! cards also have distinct information requirements.
 
 Cards can also have more than one color.
 
 The Card Number already contains its product/set code, such as `OP01` in `OP01-025`, so the product/set code does not need to be entered separately.
 
+Additional card information, such as effects and trigger effects, may be considered in future versions.
+
+The applicable fields and validation rules for each supported category are defined in `USE_CASES.md`.
+
 ### Collectible Versions
 
 Card Number alone is not necessarily sufficient to distinguish the particular collectible version of a card.
 
-For collection purposes, CardVault needs to distinguish English-language versions of the same underlying card when those differences matter to collecting. Relevant distinctions can include Alternate Art, Manga Alternate Art, Promo, Pre-Release/Super Pre-Release, SP/reprints, errata versions, serial-numbered versions, and other meaningful printing or artwork distinctions.
+For collection purposes, CardVault needs to distinguish English-language versions of the same underlying card when those differences matter to collecting.
+
+Relevant distinctions can include Alternate Art, Manga Alternate Art, Promo, Pre-Release/Super Pre-Release, SP/reprints, errata versions, serial-numbered versions, and other meaningful printing or artwork distinctions.
 
 These distinctions are based in part on the collector-oriented information described by PSA in its One Piece collecting guide.
+
+The initial MVP supports a defined subset of collectible variants and identification rules, as documented in `USE_CASES.md`. Additional printing distinctions may be introduced in future versions.
 
 The exact database representation of these characteristics has **not** been decided. They represent product/domain information at this stage, not proposed database columns.
 
@@ -91,16 +103,17 @@ Individual physical-copy characteristics such as condition, grading, or signatur
 
 ## 5. Search and Collection Browsing
 
-CardVault should allow me to search my collection by:
+CardVault should allow me to search my recorded collection by **Card Name**.
 
-- **Card Name**
-- **Card Number**
-
-Search results should return all matching collectible versions that have been recorded in CardVault, together with their relevant card information and the quantity I own of each.
+Search results should return matching collectible versions that have been recorded in CardVault, together with their relevant card information and the quantity I own of each.
 
 A Card Name search should not assume that the name identifies a single collection entry. If multiple collectible versions of that card have been recorded, I should be able to see each version and determine whether the particular version I am holding is already in my collection.
 
 If it has already been recorded, I can increase its quantity rather than entering all of its information again.
+
+CardVault should also allow me to browse the collection without supplying a search term.
+
+Searching by Card Number and other advanced search capabilities may be introduced in future versions.
 
 ### Filtering
 
@@ -108,17 +121,25 @@ The information CardVault records about cards and collectible versions may also 
 
 However, not every piece of stored card information needs to become an initial filter.
 
-Rather than defining a separate filtering taxonomy before using the application, initial filtering capabilities should be selected from the information CardVault already records based on what proves useful when managing the collection.
+Rather than defining a separate filtering taxonomy before using the application, future filtering capabilities should be selected from the information CardVault already records based on what proves useful when managing the collection.
 
 This keeps filtering aligned with the actual card and collectible-version information rather than introducing additional classification solely for search purposes.
 
-The implementation of search and filtering will be determined later during API and data-model design.
+Filtering is outside the initial MVP scope.
 
 ## 6. Initial Scope Decisions
 
 ### English-Language Collection
 
 CardVault will initially focus on the English-language One Piece TCG cards I collect. Supporting other language printings is outside the initial scope.
+
+### Local API-Only Application
+
+CardVault will initially operate as a local Rails API, accessed through Postman.
+
+The initial version will focus on implementing and testing backend collection-management functionality rather than providing a graphical user interface.
+
+Cloud hosting and production deployment are deferred until there is a practical need for broader access.
 
 ### Authentication
 
@@ -134,7 +155,7 @@ Future versions of CardVault may obtain card information from an external data s
 
 This could reduce repetitive data entry and potentially give CardVault knowledge of cards that I do not already own. Access to a broader card catalog could also make capabilities such as identifying missing cards from a set possible.
 
-Other possible future capabilities include card scanning or image recognition, pricing information, collection statistics, wishlists, deck building, trading-related features, individual-card condition or grading information, support for additional users, and additional user-facing clients.
+Other possible future capabilities include card-number search, advanced filtering, additional printing distinctions, card effects and trigger effects, card scanning or image recognition, pricing information, collection statistics, wishlists, deck building, trading-related features, individual-card condition or grading information, support for additional users, and additional user-facing clients.
 
 These are possibilities rather than commitments. They are not requirements for the initial version.
 
